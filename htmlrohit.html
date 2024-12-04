@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CommUnity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #D4EBF8; /* Light background color */
+        }
+        header {
+            background-color: #1F509A; /* Dark blue */
+            color: #FFFFFF;
+            font-size: xx-large;
+            font-weight: bolder;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #0A3981; /* Medium blue */
+            padding: 1rem;
+        }
+        nav a {
+            color: #E38E49; /* Accent color */
+            font-weight: bold;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #D4EBF8;
+            color: #1F509A;
+        }
+        .container {
+            padding: 2rem;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group input, .form-group button {
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+        .form-group button {
+            background-color: #E38E49;
+            color: #FFFFFF;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .form-group button:hover {
+            background-color: #C07637; /* Darker accent */
+        }
+        .message, .announcement, .inventory-item, .complaint, .help-request, .community-post, .community-recognition, .goal {
+            background-color: #FFFFFF;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            border: 1px solid #0A3981; /* Border for uniformity */
+        }
+        .message .actions button,
+        .announcement .actions button,
+        .inventory-item .actions button,
+        .complaint .actions button,
+        .help-request .actions button,
+        .community-post .actions button,
+        .community-recognition .actions button,
+        .goal .actions button {
+            background-color: #1F509A;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CommUnity</h1>
+    </header>
+    <nav>
+        <a href="#messaging" onclick="showSection('messaging')">Messaging</a>
+        <a href="#announcements" onclick="showSection('announcements')">Announcements</a>
+        <a href="#inventory" onclick="showSection('inventory')">Inventory</a>
+        <a href="#complaints" onclick="showSection('complaints')">Complaints</a>
+        <a href="#help" onclick="showSection('help')">Help</a>
+        <a href="#posts" onclick="showSection('posts')">Community Posts</a>
+        <a href="#goals" onclick="showSection('goals')">Goals</a>
+        <a href="#profile" onclick="showSection('profile')">My Profile</a>
+    </nav>
+    <div class="container">
+        <div id="messaging" class="section active">
+            <h2>Messaging</h2>
+            <div class="message">
+                <h3>Message to John Doe</h3>
+                <p>Hello John, how are you?</p>
+                <div class="actions">
+                    <button>Reply</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+            <div class="message">
+                <h3>Message to Jane Smith</h3>
+                <p>Can you join the meeting tomorrow?</p>
+                <div class="actions">
+                    <button>Reply</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+            <div class="message">
+                <h3>Message to Bob Johnson</h3>
+                <p>Don't forget to bring the documents.</p>
+                <div class="actions">
+                    <button>Reply</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+        </div>
+        <div id="announcements" class="section">
+            <h2>Announcements</h2>
+            <div class="announcement">
+                <h3>Community Meeting</h3>
+                <p>There will be a community meeting on Saturday at 5 PM.</p>
+                <div class="actions">
+                    <button>Save</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+            <div class="announcement">
+                <h3>Neighborhood Cleanup</h3>
+                <p>Join us for a neighborhood cleanup event this Sunday.</p>
+                <div class="actions">
+                    <button>Save</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+            <div class="announcement">
+                <h3>Block Party</h3>
+                <p>We are organizing a block party next month. Stay tuned for details!</p>
+                <div class="actions">
+                    <button>Save</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+        </div>
+        <div id="inventory" class="section">
+            <h2>Inventory System</h2>
+            <div class="inventory-item">
+                <h3>Lawn Mower</h3>
+                <p>Owner: John Doe</p>
+                <p>Contact: 123-456-7890</p>
+                <div class="actions">
+                    <button>Contact Owner</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+            <div class="inventory-item">
+                <h3>Power Drill</h3>
+                <p>Owner: Jane Smith</p>
+                <p>Contact: 987-654-3210</p>
+                <div class="actions">
+                    <button>Contact Owner</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+            <div class="inventory-item">
+                <h3>BBQ Grill</h3>
+                <p>Owner: Bob Johnson</p>
+                <p>Contact: 555-555-5555</p>
+                <div class="actions">
+                    <button>Contact Owner</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+        </div>
+        <div id="complaints" class="section">
+            <h2>Complaint Section</h2>
+            <div class="complaint">
+                <h3>Street Light Not Working</h3>
+                <p>Reported by: John Doe</p>
+                <p>Details: The street light on Elm Street is not working.</p>
+                <div class="actions">
+                    <button>Resolve</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+            <div class="complaint">
+                <h3>Noise Complaint</h3>
+                <p>Reported by: Jane Smith</p>
+                <p>Details: There is loud music coming from the house on Maple Street.</p>
+                <div class="actions">
+                    <button>Resolve</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+            <div class="complaint">
+                <h3>Broken Sidewalk</h3>
+                <p>Reported by: Bob Johnson</p>
+                <p>Details: The sidewalk on Oak Street is broken and needs repair.</p>
+                <div class="actions">
+                    <button>Resolve</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+        </div>
+        <div id="help" class="section">
+            <h2>Help Section</h2>
+            <div class="help-request">
+                <h3>Grocery Shopping Assistance</h3>
+                <p>Requested by: John Doe</p>
+                <p>Details: Need help with grocery shopping this weekend.</p>
+                <div class="actions">
+                    <button>Volunteer</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+            <div class="help-request">
+                <h3>Lunch Preparation</h3>
+                <p>Requested by: Jane Smith</p>
+                <p>Details: Need help with preparing lunch for a small gathering.</p>
+                <div class="actions">
+                    <button>Volunteer</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+            <div class="help-request">
+                <h3>Emergency Medical Assistance</h3>
+                <p>Requested by: Bob Johnson</p>
+                <p>Details: Need immediate medical assistance for a neighbor.</p>
+                <div class="actions">
+                    <button>Volunteer</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+        </div>
+        <div id="posts" class="section">
+            <h2>Community Posts</h2>
+            <div class="community-post">
+                <h3>Neighborhood BBQ</h3>
+                <p>Posted by: John Doe</p>
+                <p>Details: We had a great time at the neighborhood BBQ last weekend!</p>
+                <div class="actions">
+                    <button>Like</button>
+                    <button>Comment</button>
+                    <button>Share</button>
+                </div>
+            </div>
+            <div class="community-post">
+                <h3>Street Cleanup</h3>
+                <p>Posted by: Jane Smith</p>
+                <p>Details: Thanks to everyone who participated in the street cleanup event.</p>
+                <div class="actions">
+                    <button>Like</button>
+                    <button>Comment</button>
+                    <button>Share</button>
+                </div>
+            </div>
+            <div class="community-post">
+                <h3>Community Garden</h3>
+                <p>Posted by: Bob Johnson</p>
+                <p>Details: The community garden is looking beautiful thanks to all the volunteers.</p>
+                <div class="actions">
+                    <button>Like</button>
+                    <button>Comment</button>
+                    <button>Share</button>
+                </div>
+            </div>
+        </div>
+        <div id="recognition" class="section">
+            <h2>Community Recognition</h2>
+            <div class="community-recognition">
+                <h3>Top Community: Elm Street</h3>
+                <p>Elm Street has been recognized as the top community for their active participation and clean streets.</p>
+                <div class="actions">
+                    <button>View Details</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+            <div class="community-recognition">
+                <h3>Festival Transformation: Maple Street</h3>
+                <p>Maple Street has shown an amazing transformation during the recent festival.</p>
+                <div class="actions">
+                    <button>View Details</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+            <div class="community-recognition">
+                <h3>Most Active Community: Oak Street</h3>
+                <p>Oak Street has been the most active community with the highest number of events and participation.</p>
+                <div class="actions">
+                    <button>View Details</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+        </div>
+        <div id="goals" class="section">
+            <h2>Goal Setting for Communities</h2>
+            <div class="goal">
+                <h3>Daily Goal: Clean Streets</h3>
+                <p>Goal: Ensure all streets are clean by the end of the day.</p>
+                <div class="actions">
+                    <button>Track Progress</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+            <div class="goal">
+                <h3>Weekly Goal: Community Engagement</h3>
+                <p>Goal: Increase community engagement by organizing at least 3 events this week.</p>
+                <div class="actions">
+                    <button>Track Progress</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+            <div class="goal">
+                <h3>Annual Goal: Neighborhood Safety</h3>
+                <p>Goal: Improve neighborhood safety by installing more street lights and organizing safety workshops.</p>
+                <div class="actions">
+                    <button>Track Progress</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+        </div>
+        <div id="profile" class="section">
+            <h2>My Profile</h2>
+            <div class="form-group">
+                <label for="profile-name">Name</label>
+                <input type="text" id="profile-name" name="profile-name">
+            </div>
+            <div class="form-group">
+                <label for="profile-email">Email</label>
+                <input type="email" id="profile-email" name="profile-email">
+            </div>
+            <div class="form-group">
+                <label for="profile-contact">Contact Number</label>
+                <input type="text" id="profile-contact" name="profile-contact">
+            </div>
+            <div class="form-group">
+                <button type="submit">Update Profile</button>
+            </div>
+            <div class="form-group">
+                <button type="button" onclick="logout()">Log Out</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function logout() {
+            // Implement logout functionality here
+            alert('Logged out');
+        }
+    </script>
+</body>
+</html>

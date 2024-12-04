@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> CommUnity Welcome Page</title>
+  <style>
+    body {
+      font-family: Sylfaen, Javanese text;
+      background: linear-gradient(to bottom right, #4facfe, #00f2fe);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .container {
+      padding: 25px;
+    }
+    .form-container {
+      max-width: 500px;
+      margin: auto;
+    }
+    input {
+      display: round cylinder;
+      margin: 20px auto;
+      padding: 20px;
+      width: 100%;
+    }
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    body {
+  background: #f5f7fa;
+  position: relative;
+  }
+
+     body::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-image: linear-gradient(to bottom right, #00c9ff, #92fe9d);
+    opacity: 0.8;
+    z-index: -2;
+   }
+
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('st2.depositphotos.com'); /* Replace with an actual network design */
+  background-size: cover;
+  opacity: 0.1;
+  z-index: -1;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to CommUnity!</h1>
+    <div class="form-container" id="login-form">
+      <h2>Log In</h2>
+      <input type="email" id="login-email" placeholder="Email" />
+      <input type="password" id="login-password" placeholder="Password" />
+      <button onclick="login()">Log In</button>
+    </div>
+    <div class="form-container" id="signup-form">
+      <h2>Sign Up</h2>
+      <input type="text" id="signup-name" placeholder="Full Name" />
+      <input type="email" id="signup-email" placeholder="Email" />
+      <input type="password" id="signup-password" placeholder="Password" />
+      <button onclick="signup()">Sign Up</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

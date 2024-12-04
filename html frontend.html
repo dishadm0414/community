@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+    }
+    .form-container {
+      max-width: 400px;
+      margin: auto;
+    }
+    input {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      width: 100%;
+    }
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to CommUnity!</h1>
+    <div class="form-container" id="login-form">
+      <h2>Log In</h2>
+      <input type="email" id="login-email" placeholder="Email" />
+      <input type="password" id="login-password" placeholder="Password" />
+      <button onclick="login()">Log In</button>
+    </div>
+    <div class="form-container" id="signup-form">
+      <h2>Sign Up</h2>
+      <input type="text" id="signup-name" placeholder="Full Name" />
+      <input type="email" id="signup-email" placeholder="Email" />
+      <input type="password" id="signup-password" placeholder="Password" />
+      <button onclick="signup()">Sign Up</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

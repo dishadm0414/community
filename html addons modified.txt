@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> CommUnity Welcome Page</title>
+  <style>
+    body {
+      font-family: Sylfaen, Javanese text;
+      background: linear-gradient(to bottom right, hsla(277, 99%, 65%, 0.515), #0026fe67);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .container {
+      padding: 25px;
+    }
+    .form-container {
+      max-width: 500px;
+      margin: auto;
+    }
+    input {
+      display: round cylinder;
+      margin: 20px auto;
+      padding: 20px;
+      width: 100%;
+    }
+    button {
+  padding: 10px 20px;
+  font-size: 18px;
+  color: black;
+  background-color: #0040ffbe;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+button:hover {
+  background-color: #00b365d5; /* Darker shade on hover */
+}
+
+button:active {
+  transform: scale(0.95); /* Slight shrink effect on click */
+}
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to CommUnity!</h1>
+    <div class="form-container" id="login-form">
+      <h2>Log In</h2>
+      <input type="email" id="login-email" placeholder="Email" />
+      <input type="password" id="login-password" placeholder="Password" />
+      <button onclick="login()">Log In</button>
+    </div>
+    <div class="form-container" id="signup-form">
+      <h2>Sign Up</h2>
+      <input type="text" id="signup-name" placeholder="Full Name" />
+      <input type="email" id="signup-email" placeholder="Email" />
+      <input type="password" id="signup-password" placeholder="Password" />
+      <button onclick="signup()">Sign Up</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
